@@ -1,6 +1,4 @@
-
+.gradle
+.idea
+build
 *.iml
-
-*.properties
-
-.gradle/2.14.1/taskArtifacts/cache.properties.lock
