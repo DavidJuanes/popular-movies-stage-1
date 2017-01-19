@@ -75,7 +75,7 @@ public class MovieServiceTest {
 
         Movie movie4 = movies.get(3);
         Assert.assertEquals("Spirited Away", movie4.getTitle());
-        Assert.assertTrue(movie4.getSynopsis().contains("The most dangerous former operative of the CIA"));
+        Assert.assertTrue(movie4.getSynopsis().contains("Oscar winning Japanese animated film about a ten year old girl"));
         Assert.assertEquals("/ynXoOxmDHNQ4UAy0oU6avW71HVW.jpg", movie4.getPosterUrl());
         Assert.assertEquals("2001-07-20", movie4.getReleaseDate());
         Assert.assertEquals(8.15, movie4.getVoteAverage());
