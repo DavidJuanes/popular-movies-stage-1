@@ -14,7 +14,7 @@ import java.util.Properties;
 
 public class ApplicationPropertiesLoader {
     private static final String LOG_TAG = "PROPS_LOADER";
-    private static final String PROPERTIES_FILENAME = "applicaition.properties";
+    private static final String PROPERTIES_FILENAME = "application.properties";
     private static final String APIKEY_KEY = "themoviedb.apikey";
 
     public static String getProperty(String key, Context context) {

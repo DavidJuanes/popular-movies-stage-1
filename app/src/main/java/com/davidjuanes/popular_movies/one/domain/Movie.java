@@ -3,16 +3,20 @@ package com.davidjuanes.popular_movies.one.domain;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by davidgonzalez on 18/01/2017.
  */
 
-public class Movie {
+public class Movie implements Serializable {
     private static final String TITLE_TAG = "title";
     private static final String RELEASE_DATE_TAG = "release_date";
     private static final String POSTER_URL_TAG = "poster_path";
     private static final String VOTE_AVERAGE_TAG = "vote_average";
     private static final String SYNOPSIS_TAG = "overview";
+
+    private static final String posterUrlPrexif = "https://image.tmdb.org/t/p/w600";
 
     private String title;
     private String releaseDate;
@@ -91,7 +95,7 @@ public class Movie {
             Movie movie = new Movie();
             movie.setTitle(jsonObject.getString(TITLE_TAG));
             movie.setSynopsis(jsonObject.getString(SYNOPSIS_TAG));
-            movie.setPosterUrl(jsonObject.getString(POSTER_URL_TAG));
+            movie.setPosterUrl(posterUrlPrexif + jsonObject.getString(POSTER_URL_TAG));
             movie.setReleaseDate(jsonObject.getString(RELEASE_DATE_TAG));
             movie.setVoteAverage(jsonObject.getDouble(VOTE_AVERAGE_TAG));
             return movie;

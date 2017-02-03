@@ -1,5 +1,7 @@
 package com.davidjuanes.popular_movies.one.services.themoviedb;
 
+import android.util.Log;
+
 import java.io.IOException;
 
 import okhttp3.OkHttpClient;
@@ -14,7 +16,7 @@ public class TheMovieDbConnector
 {
     private static final String API_BASE_URL = "https://api.themoviedb.org/3/";
     private static final String POPULAR_MOVIES_ENDPOINT = "movie/popular";
-    private static final String HIGHEST_RATED_MOVIES_ENDPOINT = "/movie/top_rated";
+    private static final String HIGHEST_RATED_MOVIES_ENDPOINT = "movie/top_rated";
     private String apiKey;
     private OkHttpClient client = new OkHttpClient();
 
@@ -34,6 +36,7 @@ public class TheMovieDbConnector
 
     private String performRequest(Request request) throws TheMovieDbException {
         try {
+            Log.i("MovieDbConnector", "Performing HTTP Request to: " + request.method() + " " + request.url());
             Response response = client.newCall(request).execute();
             if (response.code() != 200)
             {
@@ -45,17 +48,17 @@ public class TheMovieDbConnector
         }
     }
 
-    private Request getPopularMoviesRequest()
+    public Request getPopularMoviesRequest()
     {
-        return new Request.Builder().url(API_BASE_URL + POPULAR_MOVIES_ENDPOINT + GetApiKeyParameter()).build();
+        return new Request.Builder().url(API_BASE_URL + POPULAR_MOVIES_ENDPOINT + getApiKeyParameter()).build();
     }
 
-    private Request getHighestRatedRequest()
+    public Request getHighestRatedRequest()
     {
-        return new Request.Builder().url(API_BASE_URL + HIGHEST_RATED_MOVIES_ENDPOINT + GetApiKeyParameter()).build();
+        return new Request.Builder().url(API_BASE_URL + HIGHEST_RATED_MOVIES_ENDPOINT + getApiKeyParameter()).build();
     }
 
-    private String GetApiKeyParameter()
+    private String getApiKeyParameter()
     {
         return "?api_key=" + apiKey;
     }

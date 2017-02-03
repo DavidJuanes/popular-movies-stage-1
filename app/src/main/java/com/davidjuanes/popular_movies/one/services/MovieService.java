@@ -32,6 +32,10 @@ public class MovieService {
         theMovieDbConnector = new TheMovieDbConnector(ApplicationPropertiesLoader.getApiKey(context));
     }
 
+    /**
+     * Only used for unit testing
+     */
+    @Deprecated
     public MovieService()
     {
 

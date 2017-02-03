@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
  * Created by davidgonzalez on 18/01/2017.
  */
 public class MovieServiceTest {
-
+    private static final String posterUrlPrefix = "https://image.tmdb.org/t/p/w500";
     private MovieService movieService;
 
     @Before
@@ -35,14 +35,14 @@ public class MovieServiceTest {
         Movie movie1 = movies.get(0);
         Assert.assertEquals("Suicide Squad", movie1.getTitle());
         Assert.assertTrue(movie1.getSynopsis().contains("From DC Comics comes the Suicide Squad"));
-        Assert.assertEquals("/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg", movie1.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg", movie1.getPosterUrl());
         Assert.assertEquals("2016-08-03", movie1.getReleaseDate());
         Assert.assertEquals(5.91, movie1.getVoteAverage());
 
         Movie movie2 = movies.get(1);
         Assert.assertEquals("Jason Bourne", movie2.getTitle());
         Assert.assertTrue(movie2.getSynopsis().contains("The most dangerous former operative of the CIA"));
-        Assert.assertEquals("/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg", movie2.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg", movie2.getPosterUrl());
         Assert.assertEquals("2016-07-27", movie2.getReleaseDate());
         Assert.assertEquals(5.25, movie2.getVoteAverage());
     }
@@ -55,28 +55,28 @@ public class MovieServiceTest {
         Movie movie1 = movies.get(0);
         Assert.assertEquals("The Shawshank Redemption", movie1.getTitle());
         Assert.assertTrue(movie1.getSynopsis().contains("Framed in the 1940s for the double murder of his"));
-        Assert.assertEquals("/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg", movie1.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg", movie1.getPosterUrl());
         Assert.assertEquals("1994-09-10", movie1.getReleaseDate());
         Assert.assertEquals(8.32, movie1.getVoteAverage());
 
         Movie movie2 = movies.get(1);
         Assert.assertEquals("Whiplash", movie2.getTitle());
         Assert.assertTrue(movie2.getSynopsis().contains("Under the direction of a ruthless instructor"));
-        Assert.assertEquals("/lIv1QinFqz4dlp5U4lQ6HaiskOZ.jpg", movie2.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/lIv1QinFqz4dlp5U4lQ6HaiskOZ.jpg", movie2.getPosterUrl());
         Assert.assertEquals("2014-10-10", movie2.getReleaseDate());
         Assert.assertEquals(8.29, movie2.getVoteAverage());
 
         Movie movie3 = movies.get(2);
         Assert.assertEquals("The Godfather", movie3.getTitle());
         Assert.assertTrue(movie3.getSynopsis().contains("chronicles the fictional Italian-American Corleone crime family"));
-        Assert.assertEquals("/d4KNaTrltq6bpkFS01pYtyXa09m.jpg", movie3.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/d4KNaTrltq6bpkFS01pYtyXa09m.jpg", movie3.getPosterUrl());
         Assert.assertEquals("1972-03-15", movie3.getReleaseDate());
         Assert.assertEquals(8.26, movie3.getVoteAverage());
 
         Movie movie4 = movies.get(3);
         Assert.assertEquals("Spirited Away", movie4.getTitle());
         Assert.assertTrue(movie4.getSynopsis().contains("Oscar winning Japanese animated film about a ten year old girl"));
-        Assert.assertEquals("/ynXoOxmDHNQ4UAy0oU6avW71HVW.jpg", movie4.getPosterUrl());
+        Assert.assertEquals(posterUrlPrefix + "/ynXoOxmDHNQ4UAy0oU6avW71HVW.jpg", movie4.getPosterUrl());
         Assert.assertEquals("2001-07-20", movie4.getReleaseDate());
         Assert.assertEquals(8.15, movie4.getVoteAverage());
     }
