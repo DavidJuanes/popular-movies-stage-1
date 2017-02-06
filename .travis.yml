@@ -30,6 +30,7 @@ android:
   #    - 'google-gdk-license-.+'
 
 script:
+  - ./gradlew dependencies || true
   - ./gradlew build jacocoTestReport assembleAndroidTest
   - ./gradlew connectedCheck
 #Integration with codecov (Code quality analysis)
